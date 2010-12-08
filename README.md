@@ -3,7 +3,13 @@
 This is a small function to strip query parameters that fit the form
 `callback=blablabla`.  The idea is to use this after
 [connect-jsonp](https://github.com/steelThread/connect-jsonp) and
-before Connect.cache.  For example:
+before Connect.cache.  
+
+A much better solution is to use the `{filter:true}` parameter option for the
+`connect-jsonp` middleware module.  But it didn't exist when I wrote
+this and I thought I'd push it out anyway.
+
+# Example use:
 
     var connect = require('connect');
     var jsonp = require('connect-jsonp');
@@ -32,4 +38,4 @@ in it.
 # Credit
 
 - Senchalabs for Connect.  I mostly modeled this code after the filter module.
-- steelThread for the excellent `connect-jsonp` middleware
+- steelThread for the `connect-jsonp` middleware
